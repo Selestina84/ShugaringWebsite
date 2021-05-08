@@ -53,6 +53,8 @@
    column-gap: 40px;
    &>img
     width: 100%;
+ .questions
+  padding-top: 75px;
 
 @media (max-width: 768px) 
  .container
@@ -98,6 +100,8 @@
    column-gap: 20px;
    &>img
     width: 100%;
+ .questions
+  padding-top: 50px;
 @media (max-width: 576px)
  .container
   width: 100%;
@@ -142,6 +146,8 @@
    grid-template-rows: minmax(200px, auto);
    column-gap: 0;  
    row-gap: 20px;
+ .questions
+  padding-top: 75px;
 
  @media (max-width:420px)
   .promo
@@ -149,3 +155,16 @@
    background: url(../img/main_bg.min.jpg) no-repeat 50%/cover;
    &_title
     font-size: 32px;
+@media(min-width: 993px)
+ .questions
+  &__item
+   & summary
+    &:hover
+     text-decoration: none;
+     background: $pink-color;
+     color: white;
+     transition: all .8s ease;
+     &::before
+      content: '';
+      background: url("../icons/social/arrow-white.svg") no-repeat 50%/cover;
+      transition: all .8s ease;

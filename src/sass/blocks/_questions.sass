@@ -1,2 +1,55 @@
 .questions
  padding-top: 100px;
+ &__item
+  width: 100%;
+  margin-top: 20px;
+  & p
+   margin-top: 20px;
+   border: 1px dotted $viol-color;
+   border-radius: 5px;
+   padding: 10px;
+  & details[open] summary
+   background: darken($pink-color, 30%);
+   color: white;
+   transition: all .8s ease;
+   &::before
+    content: '';
+    background: url("../icons/social/arrow-white.svg") no-repeat 50%/cover;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 12px;
+    top: 15px;
+    transform: rotate(360deg);
+    transition: all .8s ease;
+  & summary
+   display: block;
+   position: relative;
+   cursor: pointer; 
+   min-width: 135px;
+   font-weight: 600;
+   border: 1px solid $pink-color;
+   color: $viol-color;
+   background: #ffff0;
+   border-radius: 5px;
+   border: 2px solid $pink-color;
+   box-shadow: 0px 2px 4px $viol-color;
+   padding: 12px 25px 12px 40px;
+   &::before
+    content: '';
+    background: url("../icons/social/arrow-pink.svg") no-repeat 50%/cover;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 12px;
+    top: 15px;
+    transform: rotate(270deg);
+ 
+  
+    
+    
+ 
+ 
+    

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<svg width="1280" height="1280" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+ <metadata>Created by potrace 1.15, written by Peter Selinger 2001-2017</metadata>
+ <g class="layer">
+  <title>Layer 1</title>
+  <g fill="#000000" id="svg_1" transform="translate(0 1280) scale(0.1 -0.1)">
+   <path d="m290,12790c-195,-41 -335,-242 -309,-445c6,-51 383,-811 3040,-6125c2901,-5801 3036,-6069 3082,-6110c61,-54 157,-99 231,-106c118,-13 258,40 334,125c31,35 771,1508 3070,6106c2924,5849 3029,6062 3035,6126c15,173 -76,326 -237,403c-59,27 -74,30 -160,30c-79,-1 -104,-5 -150,-26c-30,-13 -1359,-894 -2953,-1956l-2897,-1932l-2897,1932c-1594,1062 -2923,1942 -2953,1956c-61,27 -168,37 -236,22z" fill="#ffffff" id="svg_2"/>
+  </g>
+ </g>
+</svg>
