@@ -16,5 +16,8 @@
   background: $pink-color;
   color: white;
   transition: all .8s ease;
- &:active
-  background: darken($pink-color, 30%)
+ &:active,
+ &:focus
+  background: darken($pink-color, 30%);
+  border: 1px solid $pink-color;
+  outline: none;
