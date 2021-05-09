@@ -1,0 +1,23 @@
+.btn
+ display: block;
+ cursor: pointer; 
+ text-align: center;
+ min-width: 135px;
+ font-weight: 600;
+ border: 1px solid $pink-color;
+ color: $viol-color;
+ background: #ffff0;
+ border-radius: 5px;
+ border: 2px solid $pink-color;
+ box-shadow: 0px 2px 4px $viol-color;
+ padding: 12px 25px;
+ &:hover
+  text-decoration: none;
+  background: $pink-color;
+  color: white;
+  transition: all .8s ease;
+ &:active,
+ &:focus
+  background: darken($pink-color, 30%);
+  border: 1px solid $pink-color;
+  outline: none;

@@ -1,0 +1,53 @@
+.promo
+ min-height: 100vh;
+ background: url(../img/main_bg.png) no-repeat 50%/cover;
+ position: relative;
+ padding-top: 205px;
+ &_title
+  width: 532px;
+  margin-top: 10px;
+  font-size: 56px;
+  line-height: 58px;
+ &_subtitle
+  padding-left: 10px;
+  position: relative;
+  z-index: 1;
+  @include orange_circle;
+ &_btns
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+  margin-top: 45px;
+ &_link
+  display: block;
+  height: 45px;
+  text-align: center;
+  min-width: 135px;
+  border: 1px solid $pink-color;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 21px;
+  color: #000000;
+  &:hover
+   color: #000;
+   text-decoration: none;
+
+.hamburger
+ position: absolute;
+ top: 20px;
+ right: 30px;
+ height: 21px;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-items: flex-end;
+ z-index: 3;
+ cursor: pointer;
+ span
+  width: 30px;
+  height: 3px;
+  background: #151812;
+ span.long
+   width: 36px;
