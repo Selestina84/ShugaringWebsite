@@ -21,3 +21,34 @@
   background: darken($pink-color, 30%);
   border: 1px solid $pink-color;
   outline: none;
+  color: white;
+ 
+ &-pageup
+  opacity: 0;
+  display: block;
+  border-radius: 100%;
+  min-width: 20px;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  &::before
+    content: '';
+    background: url("../icons/social/arrow-pink.svg") no-repeat 100%/cover;
+    display: block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    transform: rotate(180deg);
+  &:hover,
+  &:active
+   &::before
+     background: url("../icons/social/arrow-white.svg") no-repeat 100%/cover;
+
+ 
+  

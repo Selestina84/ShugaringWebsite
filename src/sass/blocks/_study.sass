@@ -8,3 +8,21 @@
   grid-template-columns: 2fr 1fr;
   grid-template-rows: minmax(600px, auto);
   column-gap: 70px;
+  & img
+   max-width: 400px;
+ &__list
+  list-style: none;
+  margin-left: 20px;
+ & li 
+  position: relative;
+  &::before
+   content: '';
+   background: url("../icons/social/arrow-pink.svg") no-repeat 50%/cover;
+   display: block;
+   left: -20px;
+   top: 3px;
+   width: 15px;
+   height: 15px;
+   position: absolute;
+   transform: rotate(270deg);
+   
