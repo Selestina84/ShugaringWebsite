@@ -1,11 +1,12 @@
 const images = () => {
     const workSection = document.querySelector('.about'),
-          body = document.querySelector('body'),
           imgPopup = document.createElement('div'),
-          bigImg = document.createElement('img');
+          bigImg = document.createElement('img'),
+          scroll = calcScroll();
        
-
+          imgPopup.classList.add('faded');
       imgPopup.classList.add('popup');
+     
       imgPopup.style.display = "none";
       workSection.appendChild(imgPopup);  
       
@@ -19,14 +20,30 @@ const images = () => {
               imgPopup.style.display = "flex";
               const path = target.parentNode.getAttribute('href');
               bigImg.setAttribute('src', path);
-              body.classList.add('modal-open');
+              document.body.style.overflow = "hidden";
+              document.body.style.marginRight = `${scroll}px`;
 
           }
           if ( target && target.matches('div.popup')) {
               imgPopup.style.display = "none";
-              body.classList.remove('modal-open');
+              document.body.style.overflow = "visible";
+              document.body.style.marginRight = "0px";
           }
       });
+
+      function calcScroll (){
+          let div = document.createElement('div');
+          div.style.width = "50px";
+          div.style.height = "50px";
+          div.style.overflowY = "scroll";
+          div.style.visibility = "hidden";
+
+          document.body.appendChild(div);
+
+          let scrollWidth = div.offsetWidth - div.clientWidth;
+
+          return scrollWidth;
+      }
 
    
 };

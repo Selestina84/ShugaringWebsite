@@ -1,11 +1,7 @@
-@mixin orange_circle
- &:before
-  content: '';
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  top: -25%;
-  width: 36px;
-  height: 36px;
-  border-radius: 100%;
-  background: $green-color;
+@mixin arrow
+ &::before
+  background: url("../icons/social/arrow-pink.svg") no-repeat 100%/cover;
+ &:hover,
+ &:active
+  &::before
+    background: url("../icons/social/arrow-white.svg") no-repeat 100%/cover;

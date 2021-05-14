@@ -16,15 +16,15 @@
   background: $pink-color;
   color: white;
   transition: all .8s ease;
- &:active,
- &:focus
+ &:active
+
   background: darken($pink-color, 30%);
   border: 1px solid $pink-color;
   outline: none;
   color: white;
  
  &-pageup
-  opacity: 0;
+  opacity: 1;
   display: block;
   border-radius: 100%;
   min-width: 20px;
@@ -35,9 +35,9 @@
   position: fixed;
   bottom: 10%;
   right: 5%;
+  @include arrow;
   &::before
     content: '';
-    background: url("../icons/social/arrow-pink.svg") no-repeat 100%/cover;
     display: block;
     width: 25px;
     height: 25px;
@@ -45,10 +45,7 @@
     left: 10px;
     top: 10px;
     transform: rotate(180deg);
-  &:hover,
-  &:active
-   &::before
-     background: url("../icons/social/arrow-white.svg") no-repeat 100%/cover;
+
 
  
   
