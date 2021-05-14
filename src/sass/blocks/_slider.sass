@@ -1,20 +1,23 @@
 .slider
  padding-top: 100px;
  &__wrapper
-  width: 90%;
+  width: 70%;
   margin: 20px auto;
   padding: 0 20px;
-  height: 400px;
+  height: 600px;
   display: flex;
   position: relative;
  &__item
   width: 100%;
+  display: flex;
+  justify-content: center;
  &__img
   height: 100%;
   margin: 0 auto;
  &__prev,
  &__next
   @include arrow;
+  outline: none;
   position: absolute;
   min-width: 0;
   width: 50px;
