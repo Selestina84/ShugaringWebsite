@@ -5017,9 +5017,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 var form = function form() {
-  var form = document.querySelectorAll('forms'),
+  var form = document.querySelector('form.contacts__form'),
       inputs = document.querySelectorAll('input'),
-      textarea = document.querySelectorAll('textarea');
+      textarea = document.querySelector('textarea');
   var message = {
     loading: 'Загрузка...',
     success: 'Спасибо! Скоро я свяжусь с вами!',
@@ -5027,10 +5027,10 @@ var form = function form() {
   };
 
   var clearInputs = function clearInputs() {
+    textarea.value = '';
     inputs.forEach(function (item) {
       item.value = '';
     });
-    textarea.value = '';
   };
 
   var postData = /*#__PURE__*/function () {
@@ -5068,24 +5068,22 @@ var form = function form() {
     };
   }();
 
-  form.forEach(function (item) {
-    item.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var statusMessage = document.createElement('div');
-      statusMessage.classList.add('status');
-      item.appendChild(statusMessage);
-      var formData = new FormData(item);
-      postData('server.php', formData).then(function (res) {
-        console.log(res);
-        statusMessage.textContent = message.success;
-      }).catch(function () {
-        statusMessage.textContent = message.failure;
-      }).finally(function () {
-        clearInputs();
-        setTimeout(function () {
-          statusMessage.remove();
-        }, 5000);
-      });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var statusMessage = document.createElement('div');
+    statusMessage.classList.add('status');
+    form.appendChild(statusMessage);
+    var formData = new FormData(form);
+    postData('server.php', formData).then(function (res) {
+      console.log(res);
+      statusMessage.textContent = message.success;
+    }).catch(function () {
+      statusMessage.textContent = message.failure;
+    }).finally(function () {
+      clearInputs();
+      setTimeout(function () {
+        statusMessage.remove();
+      }, 5000);
     });
   });
 };
@@ -5223,6 +5221,7 @@ var sliders = function sliders(_sliders, prev, next) {
     items[slideIndex - 1].classList.add('slideRight');
     items[slideIndex - 1].classList.remove('slideLeft');
   });
+  /* swiper for mobile */
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (sliders);

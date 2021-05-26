@@ -36,6 +36,9 @@ const sliders = (sliders, prev, next) => {
    items[slideIndex - 1].classList.add('slideRight');
    items[slideIndex - 1].classList.remove('slideLeft');
   })
+ /* swiper for mobile */
+ 
+
 }
 
 export default sliders;

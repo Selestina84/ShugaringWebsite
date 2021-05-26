@@ -1,19 +1,21 @@
 const form = () => {
- const form = document.querySelectorAll('forms'),
+ const form = document.querySelector('form.contacts__form'),
       inputs = document.querySelectorAll('input'),
-      textarea = document.querySelectorAll('textarea');
+      textarea = document.querySelector('textarea');
 
       const message ={
        loading: 'Загрузка...',
        success: 'Спасибо! Скоро я свяжусь с вами!',
        failure: 'Что то пошло не так...'
+   
       }
       
       const clearInputs = () =>{
+        textarea.value = '';
        inputs.forEach(item => {
         item.value = '';
        });
-       textarea.value = '';
+       
       }
 
       const postData = async (url, data) => {
@@ -26,15 +28,14 @@ const form = () => {
        return await res.text();
       }
 
-      form.forEach(item => {
-       item.addEventListener('submit', (e) => {
+      form.addEventListener('submit', (e) => {
         e.preventDefault();
 
         let statusMessage = document.createElement('div');
         statusMessage.classList.add('status')
-        item.appendChild(statusMessage);
+        form.appendChild(statusMessage);
 
-        const formData = new FormData(item);
+        const formData = new FormData(form);
         postData('server.php', formData)
          .then(res => {
           console.log(res);
@@ -50,7 +51,7 @@ const form = () => {
           }, 5000);
          })
        })
-      })
+     
 }
  
 export default form;
