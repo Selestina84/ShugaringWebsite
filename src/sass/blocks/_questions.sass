@@ -24,6 +24,7 @@
     transform: rotate(360deg);
     transition: all .8s ease;
   & summary
+   list-style: none;
    display: block;
    position: relative;
    cursor: pointer; 
@@ -36,7 +37,7 @@
    border: 2px solid $pink-color;
    box-shadow: 0px 2px 4px $viol-color;
    padding: 12px 25px 12px 40px;
-   &::marker
+   &::-webkit-details-marker
     display: none;
    &::before
     content: '';

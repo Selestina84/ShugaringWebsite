@@ -17,14 +17,10 @@
   margin-left: 20px;
  & li 
   position: relative;
-  &::before
-   content: '';
-   background: url("../icons/social/arrow-pink.svg") no-repeat 50%/cover;
-   display: block;
-   left: -20px;
-   top: 3px;
-   width: 15px;
-   height: 15px;
-   position: absolute;
-   transform: rotate(270deg);
+  @include listMarker;
+  
+ &__btn
+  width: 100%;
+  max-width: 400px;
+  margin: 30px auto;
    

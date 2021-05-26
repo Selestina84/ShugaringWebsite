@@ -15,6 +15,14 @@
    border-radius: 100%;
    display: block;
    margin: 0 auto;
-
+ &__list
+  list-style: none;
+  margin-left: 20px;
+  & li
+   position: relative;
+   margin-bottom: 5px;
+   @include listMarker;
+ &__link
+  @include link;
   
 

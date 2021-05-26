@@ -5,3 +5,20 @@
  &:active
   &::before
     background: url("../icons/social/arrow-white.svg") no-repeat 100%/cover;
+@mixin listMarker
+ &::before
+  content: '';
+  background: url("../icons/social/arrow-pink.svg") no-repeat 50%/cover;
+  display: block;
+  left: -20px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  transform: rotate(270deg);
+@mixin link
+  color: $pink-color;
+  &:hover,
+  &:active
+    color: darken($pink-color, 30%)
+    text-decoration: none;
