@@ -7,7 +7,7 @@ const button = (trigger) => {
 
   window.addEventListener('scroll', () => {
 
-    if(window.pageYOffset >= 500){
+    if(window.pageYOffset >= 600){
      
      butt.style.display = "block";
     }

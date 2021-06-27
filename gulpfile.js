@@ -8,7 +8,7 @@ const rename = require("gulp-rename");
 const imagemin = require('gulp-imagemin');
 const htmlmin = require('gulp-htmlmin');
 
- const dist = "./dist/"; 
+const dist = "./dist/"; 
 /*  const dist = "C:/MAMP/htdocs/test";  */
 
 gulp.task('server', function() {

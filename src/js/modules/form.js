@@ -1,5 +1,5 @@
-const form = () => {
- const form = document.querySelector('form.contacts__form'),
+const form = (formSelector) => {
+ const form = document.querySelector(formSelector),
       inputs = document.querySelectorAll('input'),
       textarea = document.querySelector('textarea');
 

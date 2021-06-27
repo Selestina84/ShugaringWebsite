@@ -1,5 +1,6 @@
-const smooth = () => {
- const smoothLinks = document.querySelectorAll('a[href^="#"]');
+const smooth = (links,selector) => {
+ const smoothLinks = document.querySelectorAll(links);
+ const menuEl =  document.querySelector(selector);
 for (let smoothLink of smoothLinks) {
     smoothLink.addEventListener('click', function (e) {
         e.preventDefault();
@@ -9,6 +10,7 @@ for (let smoothLink of smoothLinks) {
             behavior: 'smooth',
             block: 'start'
         });
+        menuEl.classList.remove('active');
     });
 };
 };

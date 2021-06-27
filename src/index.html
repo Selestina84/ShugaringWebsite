@@ -159,9 +159,15 @@
                 <div class="about__sert">
                     <h2 class="title title_fs22">Мои сертификаты</h2>
                     <div class="about__sert-wrapper">
-                        <a href="./img/sertificat-big.jpg" class="about__sert-link"><img src="img/sertificat.jpg" alt="sertificat-1" class="about__sert-photo"></a>
-                        <a href="img/sertificat-big.jpg" class="about__sert-link"><img src="img/sertificat.jpg" alt="sertificat-2" class="about__sert-photo"></a>
-                        <a href="img/sertificat-big.jpg" class="about__sert-link"><img src="img/sertificat.jpg" alt="sertificat-3" class="about__sert-photo"></a>
+                        <a href="./img/sertificat-big.jpg" class="about__sert-link">
+                            <img src="img/sertificat.jpg" alt="sertificat-1" class="about__sert-photo">
+                        </a>
+                        <a href="img/sertificat-big.jpg" class="about__sert-link">
+                            <img src="img/sertificat.jpg" alt="sertificat-2" class="about__sert-photo">
+                        </a>
+                        <a href="img/sertificat-big.jpg" class="about__sert-link">
+                            <img src="img/sertificat.jpg" alt="sertificat-3" class="about__sert-photo">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -219,7 +225,11 @@
                     <p class="study__descr">Кроме профессионального обучения,также я регулярно провожу мастер классы для небольших групп,на которых обьясняю и показываю основные тонкости и ньюансы, которые вам необходимо знать и учитывать, если вы решите делать шугаринг для себя.</p>
                 </div>
               
-                <img src="img/main_photo.jpg" alt="вручение сертификата" class="study__img">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="img/main_sertificat_min.jpg">
+                    <source media="(min-width: 769px)" srcset="img/main_sertifikat.jpg">
+                    <img src="img/main_sertifikat.jpg" alt="my photo">
+                  </picture>
             </div>
           
         </div>
@@ -282,19 +292,38 @@
             </div>
         </div>
     </section>
-    <section class="slider">
+ 
+    <section class="swiper" id="gallery">
         <div class="container">
             <h2 class="title title-pink title_fs42">Фотогалерея</h2>
             <div class="divider"></div>
-        <div class="slider__wrapper">
-            <button class="slider__next btn"></button>
-            <button class="slider__prev btn"></button>
-            <div class="slider__item"><img src="img/slide1.jpg" alt="первое изображение" class="slider__img"></div>
-            <div class="slider__item"><img src="img/slide2.jpg" alt="второе изображение" class="slider__img"></div>
-            <div class="slider__item"><img src="img/slide3.jpg" alt="третье изображение" class="slider__img"></div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="img/slide1.jpg" alt="в процессе работы" class="swiper-img">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/slide2.jpg" alt="шугаринг подмышек" class="swiper-img">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/slide3.jpg" alt="подмышки до-после шугаринга" class="swiper-img">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/slide4.jpg" alt="ноги до-после шугаринга" class="swiper-img">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/slide5.jpg" alt="спина до-после шугаринга" class="swiper-img">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev  btn"></div>
+            <div class="swiper-button-next  btn"></div>
         </div>
+        </div>
+          
+       
         
-        </div>
+        
         
     </section>
     <section class="contacts" id="contacts">
