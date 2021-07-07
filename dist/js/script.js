@@ -17109,29 +17109,28 @@ module.exports = g;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_hamburger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/hamburger */ "./src/js/modules/hamburger.js");
 /* harmony import */ var _modules_smooth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/smooth */ "./src/js/modules/smooth.js");
-/* harmony import */ var _modules_images__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/images */ "./src/js/modules/images.js");
-/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/form */ "./src/js/modules/form.js");
-/* harmony import */ var _modules_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/button */ "./src/js/modules/button.js");
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
+/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/form */ "./src/js/modules/form.js");
+/* harmony import */ var _modules_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/button */ "./src/js/modules/button.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 
 
 
 
 
-
-swiper__WEBPACK_IMPORTED_MODULE_5__["Swiper"].use([swiper__WEBPACK_IMPORTED_MODULE_5__["Navigation"], swiper__WEBPACK_IMPORTED_MODULE_5__["Pagination"]]);
+swiper__WEBPACK_IMPORTED_MODULE_4__["Swiper"].use([swiper__WEBPACK_IMPORTED_MODULE_4__["Navigation"], swiper__WEBPACK_IMPORTED_MODULE_4__["Pagination"]]);
 window.addEventListener('DOMContentLoaded', function () {
   'use strict';
 
   Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_0__["default"])('.menu', '.hamburger', '.menu__close');
-  Object(_modules_button__WEBPACK_IMPORTED_MODULE_4__["default"])('.btn-pageup');
+  Object(_modules_button__WEBPACK_IMPORTED_MODULE_3__["default"])('.btn-pageup');
   Object(_modules_smooth__WEBPACK_IMPORTED_MODULE_1__["default"])('a[href^="#"]', '.menu');
-  Object(_modules_images__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  Object(_modules_form__WEBPACK_IMPORTED_MODULE_3__["default"])('form.contacts__form');
-  var swiper = new swiper__WEBPACK_IMPORTED_MODULE_5__["Swiper"]('.swiper-container', {
+  Object(_modules_form__WEBPACK_IMPORTED_MODULE_2__["default"])('form.contacts__form');
+  var swiper = new swiper__WEBPACK_IMPORTED_MODULE_4__["Swiper"]('.swiper-container', {
     speed: 600,
     loop: true,
     slidesPerView: 1,
+    freeMode: true,
+    spaceBetween: 20,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
@@ -17304,60 +17303,6 @@ var hamburger = function hamburger(menuSelector, burgerSelector, closeSelector) 
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (hamburger);
-
-/***/ }),
-
-/***/ "./src/js/modules/images.js":
-/*!**********************************!*\
-  !*** ./src/js/modules/images.js ***!
-  \**********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var images = function images() {
-  var workSection = document.querySelector('.about'),
-      imgPopup = document.createElement('div'),
-      bigImg = document.createElement('img'),
-      scroll = calcScroll();
-  imgPopup.classList.add('faded');
-  imgPopup.classList.add('popup');
-  imgPopup.style.display = "none";
-  workSection.appendChild(imgPopup);
-  imgPopup.appendChild(bigImg);
-  workSection.addEventListener('click', function (e) {
-    e.preventDefault();
-    var target = e.target;
-
-    if (target && target.classList.contains('about__sert-photo')) {
-      imgPopup.style.display = "flex";
-      var path = target.parentNode.getAttribute('href');
-      bigImg.setAttribute('src', path);
-      document.body.style.overflow = "hidden";
-      document.body.style.marginRight = "".concat(scroll, "px");
-    }
-
-    if (target && target.matches('div.popup')) {
-      imgPopup.style.display = "none";
-      document.body.style.overflow = "visible";
-      document.body.style.marginRight = "0px";
-    }
-  });
-
-  function calcScroll() {
-    var div = document.createElement('div');
-    div.style.width = "50px";
-    div.style.height = "50px";
-    div.style.overflowY = "scroll";
-    div.style.visibility = "hidden";
-    document.body.appendChild(div);
-    var scrollWidth = div.offsetWidth - div.clientWidth;
-    return scrollWidth;
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (images);
 
 /***/ }),
 
