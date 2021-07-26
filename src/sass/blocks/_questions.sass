@@ -8,10 +8,10 @@
    border: 1px dotted $viol-color;
    border-radius: 5px;
    padding: 10px;
+   animation: sweep .5s ease-in-out;
   & details[open] summary
    background: darken($pink-color, 30%);
    color: white;
-   transition: all .8s ease;
    &::before
     content: '';
     background: url("../icons/social/arrow-white.svg") no-repeat 50%/cover;
@@ -22,7 +22,7 @@
     left: 12px;
     top: 15px;
     transform: rotate(360deg);
-    transition: all .8s ease;
+    transition: all .5s ease;
   & summary
    list-style: none;
    display: block;
@@ -30,14 +30,14 @@
    cursor: pointer; 
    min-width: 135px;
    font-weight: 600;
-   border: 1px solid $pink-color;
    color: $viol-color;
-   background: #ffff0;
    border-radius: 5px;
    border: 2px solid $pink-color;
    box-shadow: 0px 2px 4px $viol-color;
    padding: 12px 25px 12px 40px;
    &::-webkit-details-marker
+    display: none;
+   &::-moz-list-bullet
     display: none;
    &::before
     content: '';
@@ -49,6 +49,7 @@
     left: 12px;
     top: 15px;
     transform: rotate(270deg);
+    transition: all .5s ease;
  
   
     

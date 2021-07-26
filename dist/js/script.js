@@ -17107,25 +17107,30 @@ module.exports = g;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_hamburger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/hamburger */ "./src/js/modules/hamburger.js");
-/* harmony import */ var _modules_smooth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/smooth */ "./src/js/modules/smooth.js");
-/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/form */ "./src/js/modules/form.js");
-/* harmony import */ var _modules_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/button */ "./src/js/modules/button.js");
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
+/* harmony import */ var _modules_counts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/counts */ "./src/js/modules/counts.js");
+/* harmony import */ var _modules_hamburger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/hamburger */ "./src/js/modules/hamburger.js");
+/* harmony import */ var _modules_smooth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/smooth */ "./src/js/modules/smooth.js");
+/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/form */ "./src/js/modules/form.js");
+/* harmony import */ var _modules_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/button */ "./src/js/modules/button.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 
 
 
 
 
-swiper__WEBPACK_IMPORTED_MODULE_4__["Swiper"].use([swiper__WEBPACK_IMPORTED_MODULE_4__["Navigation"], swiper__WEBPACK_IMPORTED_MODULE_4__["Pagination"]]);
+
+swiper__WEBPACK_IMPORTED_MODULE_5__["Swiper"].use([swiper__WEBPACK_IMPORTED_MODULE_5__["Navigation"], swiper__WEBPACK_IMPORTED_MODULE_5__["Pagination"]]);
 window.addEventListener('DOMContentLoaded', function () {
   'use strict';
 
-  Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_0__["default"])('.menu', '.hamburger', '.menu__close');
-  Object(_modules_button__WEBPACK_IMPORTED_MODULE_3__["default"])('.btn-pageup');
-  Object(_modules_smooth__WEBPACK_IMPORTED_MODULE_1__["default"])('a[href^="#"]', '.menu');
-  Object(_modules_form__WEBPACK_IMPORTED_MODULE_2__["default"])('form.contacts__form');
-  var swiper = new swiper__WEBPACK_IMPORTED_MODULE_4__["Swiper"]('.swiper-container', {
+  Object(_modules_counts__WEBPACK_IMPORTED_MODULE_0__["default"])(6, 1, '.about--years', '.about', 1500);
+  Object(_modules_counts__WEBPACK_IMPORTED_MODULE_0__["default"])(3500, 50, '.about--clients', '.about', 1500);
+  Object(_modules_counts__WEBPACK_IMPORTED_MODULE_0__["default"])(25, 1, '.about--students', '.about', 1500);
+  Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_1__["default"])('.menu', '.hamburger', '.menu__close');
+  Object(_modules_button__WEBPACK_IMPORTED_MODULE_4__["default"])('.btn-pageup');
+  Object(_modules_smooth__WEBPACK_IMPORTED_MODULE_2__["default"])('a[href^="#"]', '.menu');
+  Object(_modules_form__WEBPACK_IMPORTED_MODULE_3__["default"])('form.contacts__form');
+  var swiper = new swiper__WEBPACK_IMPORTED_MODULE_5__["Swiper"]('.swiper-container', {
     speed: 600,
     loop: true,
     slidesPerView: 1,
@@ -17172,6 +17177,43 @@ var button = function button(trigger) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (button);
+
+/***/ }),
+
+/***/ "./src/js/modules/counts.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/counts.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var counts = function counts(n, step, selector, containerSelector, time) {
+  var count = document.querySelector(selector);
+  var container = document.querySelector(containerSelector);
+  var countStatus = true;
+  window.addEventListener('scroll', function () {
+    var i = 0;
+    var t = Math.round(time / (n / step));
+
+    if (window.pageYOffset >= container.getBoundingClientRect().top && countStatus) {
+      var countId = setInterval(function () {
+        i = i + step;
+        count.innerText = "".concat(i);
+
+        if (i == n) {
+          clearInterval(countId);
+          countStatus = false;
+        }
+
+        count.innerHTML = i;
+      }, t);
+    }
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (counts);
 
 /***/ }),
 
